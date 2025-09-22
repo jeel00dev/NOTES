@@ -1,0 +1,11 @@
+| Option                | Meaning                        | What it does                                                      | What happens if you don't use it                                                |
+| --------------------- | ------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `-S`                  | Sync repositories              | Updates local package index from remote repos (like `apt update`) | You might install outdated packages or get a "package not found" error          |
+| `-u`                  | Upgrade system                 | Upgrades installed packages to latest version                     | Nothing gets upgraded — installs only what you specify                          |
+| `-y`                  | Assume yes                     | Skips confirmation prompt                                         | You’ll be asked “yes/no” before installing                                      |
+| `-n`                  | Dry-run                        | Simulates install/upgrade, shows what would happen                | It will actually install packages unless you use `-n`                           |
+| `-R`                  | Reinstall                      | Reinstalls even if package is already present                     | Skips reinstall — already-installed packages are untouched                      |
+| `-f`                  | Force install                  | Ignores file conflicts (can overwrite files)                      | Install might fail on file conflict                                             |
+| `--repository=[path]` | Custom repo                    | Install from local repo or custom repo path                       | Uses default `/etc/xbps.d/*.conf` repos only                                    |
+| `-d`                  | Debug                          | Print debug info                                                  | Output is minimal unless debug is on                                            |
+| `--manual-install`    | Mark pkg as manually installed | Useful for dependency management                                  | Installed packages may be marked auto-installed (get removed by orphan cleanup) |
